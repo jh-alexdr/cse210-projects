@@ -47,7 +47,7 @@ class Program
         }
         Console.WriteLine($"The largest number is: {max}");
 
-        // Stretch Challenges
+
         // Find the smallest positive number
         int smallestPositive = int.MaxValue;
         foreach (int num in numbers)
