@@ -4,7 +4,7 @@ using System.IO;
 
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    private List<Entry> _entries = new List<Entry>();
 
     public void AddEntry(Entry entry)
     {
@@ -13,6 +13,11 @@ public class Journal
 
     public void Display()
     {
+        if (_entries.Count == 0)
+        {
+            Console.WriteLine("No journal entries to display.\n");
+            return;
+        }
         foreach (Entry entry in _entries)
         {
             entry.Display();
@@ -33,6 +38,11 @@ public class Journal
     public void LoadFromFile(string filename)
     {
         _entries.Clear();
+        if (!File.Exists(filename))
+        {
+            Console.WriteLine("File not found.");
+            return;
+        }
         foreach (string line in File.ReadAllLines(filename))
         {
             string[] parts = line.Split('|');

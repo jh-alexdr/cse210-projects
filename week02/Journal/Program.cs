@@ -9,7 +9,10 @@ class Program
         "What was the best part of my day?",
         "How did I see the hand of the Lord in my life today?",
         "What was the strongest emotion I felt today?",
-        "If I had one thing I could do over today, what would it be?"
+        "If I had one thing I could do over today, what would it be?",
+        // Add your own prompts below:
+        "What did I learn today that surprised me?",
+        "What act of kindness did I witness or perform today?"
     };
 
     static void Main(string[] args)
@@ -19,12 +22,13 @@ class Program
 
         while (running)
         {
+            Console.WriteLine("Please select one of the following choices:");
             Console.WriteLine("1. Write a new entry");
             Console.WriteLine("2. Display the journal");
             Console.WriteLine("3. Save the journal to a file");
             Console.WriteLine("4. Load the journal from a file");
             Console.WriteLine("5. Quit");
-            Console.Write("Choose an option: ");
+            Console.Write("What would you like to do? ");
             string choice = Console.ReadLine();
 
             switch (choice)
@@ -39,22 +43,21 @@ class Program
                     Console.Write("Enter filename to save: ");
                     string saveFile = Console.ReadLine();
                     journal.SaveToFile(saveFile);
-                    Console.WriteLine("Journal saved.");
+                    Console.WriteLine("Journal saved.\n");
                     break;
                 case "4":
                     Console.Write("Enter filename to load: ");
                     string loadFile = Console.ReadLine();
                     journal.LoadFromFile(loadFile);
-                    Console.WriteLine("Journal loaded.");
+                    Console.WriteLine("Journal loaded.\n");
                     break;
                 case "5":
                     running = false;
                     break;
                 default:
-                    Console.WriteLine("Invalid option.");
+                    Console.WriteLine("Invalid option.\n");
                     break;
             }
-            Console.WriteLine();
         }
     }
 
@@ -62,7 +65,7 @@ class Program
     {
         Random rand = new Random();
         string prompt = prompts[rand.Next(prompts.Count)];
-        Console.WriteLine(prompt);
+        Console.WriteLine($"\n{prompt}");
         Console.Write("Your response: ");
         string response = Console.ReadLine();
         string date = DateTime.Now.ToShortDateString();
@@ -74,5 +77,6 @@ class Program
             _response = response
         };
         journal.AddEntry(entry);
+        Console.WriteLine("Entry added.\n");
     }
 }
