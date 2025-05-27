@@ -31,9 +31,22 @@ class Program
             )
         };
 
-        // Randomly select a scripture
-        Random rand = new Random();
-        Scripture scripture = scriptureLibrary[rand.Next(scriptureLibrary.Count)];
+        // Display scripture options
+        Console.WriteLine("Select a scripture to memorize:");
+        for (int i = 0; i < scriptureLibrary.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {scriptureLibrary[i].GetReference()}");
+        }
+
+        int selection = 0;
+        while (selection < 1 || selection > scriptureLibrary.Count)
+        {
+            Console.Write("Enter the number of your choice: ");
+            string input = Console.ReadLine();
+            int.TryParse(input, out selection);
+        }
+
+        Scripture scripture = scriptureLibrary[selection - 1];
 
         while (true)
         {
@@ -162,5 +175,10 @@ class Scripture
             if (!word.IsHidden())
                 return false;
         return true;
+    }
+
+    public string GetReference()
+    {
+        return _reference.ToString();
     }
 }
