@@ -3,8 +3,9 @@ using System.Collections.Generic;
 
 // Exceeding requirements: 
 // - This program supports both single and multiple verse references.
-// - The code is structured for easy extension to load scriptures from a file or library.
-// - Now supports a library of scriptures and randomly selects one for the user.
+// - The code let easy extension to load scriptures from a file or library.
+// - With a library of scriptures and randomly selects one for the user, in this case 
+//   four scriptures are hardcoded, but it can be easily extended to load from a file.
 
 class Program
 {
