@@ -6,18 +6,18 @@ class Program
     static void Main(string[] args)
     {
         // Create addresses
-        Address address1 = new Address("123 Main St", "Springfield", "IL", "USA");
-        Address address2 = new Address("456 Maple Ave", "Toronto", "ON", "Canada");
+        Address address1 = new Address("12 Main St", "California", "IL", "USA");
+        Address address2 = new Address("13 Colombia Ave", "Toronto", "ON", "Canada");
 
         // Create customers
-        Customer customer1 = new Customer("John Doe", address1);
-        Customer customer2 = new Customer("Jane Smith", address2);
+        Customer customer1 = new Customer("Steven Rosas", address1);
+        Customer customer2 = new Customer("Michael Castillo", address2);
 
         // Create products
-        Product product1 = new Product("Widget", "W123", 10.0, 2);
-        Product product2 = new Product("Gadget", "G456", 15.5, 1);
-        Product product3 = new Product("Thingamajig", "T789", 7.25, 3);
-        Product product4 = new Product("Doohickey", "D321", 12.0, 2);
+        Product product1 = new Product("Laptop", "L123", 10.0, 2);
+        Product product2 = new Product("Toys", "T456", 15.5, 1);
+        Product product3 = new Product("Cans", "C789", 7.25, 3);
+        Product product4 = new Product("Bags", "B321", 12.0, 2);
 
         // Create orders
         Order order1 = new Order(customer1);
