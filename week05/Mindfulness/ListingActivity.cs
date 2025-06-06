@@ -33,16 +33,9 @@ public class ListingActivity : Activity
         while (DateTime.Now < end)
         {
             Console.Write("List item: ");
-            if (Console.KeyAvailable)
-            {
-                string input = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(input))
-                    items.Add(input);
-            }
-            else
-            {
-                Thread.Sleep(100); // Prevents high CPU usage
-            }
+            string input = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(input))
+                items.Add(input);
         }
         Console.WriteLine($"\nYou listed {items.Count} items!");
         DisplayEndingMessage();
