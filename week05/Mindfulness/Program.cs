@@ -1,6 +1,6 @@
 using System;
 
-// Exceeds requirements: Added a "Gratitude Activity" that guides the user to write a gratitude letter to someone. 
+// Exceed requirement: Added a "Gratitude Activity" that guides the user to write a gratitude letter to someone. 
 // This creative feature encourages positive reflection and can be saved to a file for later use.
 
 class Program
