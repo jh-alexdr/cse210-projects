@@ -1,3 +1,9 @@
+// EXCEEDS REQUIREMENTS:
+// 1. Awards bonus points for checklist goals when the user completes the required number of repetitions. 
+//    When a checklist goal is completed, the user receives a congratulatory message and the bonus points are added to their score.
+// 2. Displays a special message to celebrate the user's achievement when a checklist goal is completed.
+
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -5,9 +11,12 @@ using System.IO;
 // Base class for all goals
 abstract class Goal
 {
-    public string Name { get; protected set; }
-    public string Description { get; protected set; }
-    public int Points { get; protected set; }
+    private string _name;
+    private string _description;
+    private int _points;
+    public string Name { get => _name; protected set => _name = value; }
+    public string Description { get => _description; protected set => _description = value; }
+    public int Points { get => _points; protected set => _points = value; }
     public abstract bool IsComplete { get; }
     public abstract void RecordEvent();
     public abstract string GetStatus();
