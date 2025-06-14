@@ -3,3 +3,4 @@ EternalGoal|read the scriptures|read the scriptures each morning everyday|100|0
 SimpleGoal|hold a family home evening|meeting with the family each monday nights|1000|False
 EternalGoal|say morning prayers|pray individually|50|0
 ChecklistGoal|invite a friend to the church|attend with a friend to the church|75|5|500|0
+SimpleGoal|scriptures|read scritures|100|False
